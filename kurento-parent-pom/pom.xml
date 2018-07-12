@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>kurento-parent-pom</artifactId>
-	<version>6.6.2</version>
+	<version>6.6.2.0.INVENTIA-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Kurento Parent POM</name>
@@ -68,7 +68,7 @@
 
 	<properties>
 		<!-- Kurento versions -->
-		<version.kurento-java>6.6.2</version.kurento-java>
+		<version.kurento-java>6.6.2.0.INVENTIA-SNAPSHOT</version.kurento-java>
 
 		<version.kurento-chroma>6.6.0</version.kurento-chroma>
 		<version.kurento-imageendpoint>6.6.0</version.kurento-imageendpoint>
