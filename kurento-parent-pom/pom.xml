@@ -236,7 +236,7 @@
 		<sourceReleaseAssemblyDescriptor>source-release</sourceReleaseAssemblyDescriptor>
 
 		<kurento-java.scm.url>https://github.com/InventiaFactory/kurento-java</kurento-java.scm.url>
-		<kurento-java.scm.connection>git@github.com:InventiaFactory/kurento-java.git</kurento-java.scm.connection>
+		<kurento-java.scm.connection>https://github.com/InventiaFactory/kurento-java.git</kurento-java.scm.connection>
 
 	</properties>
 
