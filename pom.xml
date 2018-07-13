@@ -131,4 +131,11 @@
 				</snapshots>
 			</repository>
     </repositories>
+
+		<distributionManagement>
+			<repository>
+				<id>inventia</id>
+				<url>http://archiva.inventia.biz/repository/inventia</url>
+			</repository>
+		</distributionManagement>
 </project>
