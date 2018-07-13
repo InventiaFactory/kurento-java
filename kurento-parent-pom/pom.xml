@@ -1067,7 +1067,7 @@
 					</dependencies>
 					<configuration>
 						<checkModificationExcludeList>pom.xml</checkModificationExcludeList>
-						<tagNameFormat>@{project.version}</tagNameFormat>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
 					</configuration>
 				</plugin>
 				<plugin>
