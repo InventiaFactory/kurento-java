@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -10,7 +9,7 @@
 	</parent>
 
 	<artifactId>kurento-parent-pom</artifactId>
-	<version>6.6.2.0.INVENTIA-SNAPSHOT</version>
+	<version>6.6.2.0.INVENTIA</version>
 	<packaging>pom</packaging>
 
 	<name>Kurento Parent POM</name>
@@ -39,7 +38,7 @@
 		<url>${kurento-java.scm.url}</url>
 		<connection>scm:git:${kurento-java.scm.connection}</connection>
 		<developerConnection>scm:git:${kurento-java.scm.connection}</developerConnection>
-		<tag>${project.version}</tag>
+		<tag>v6.6.2.0.INVENTIA</tag>
 	</scm>
 
 	<distributionManagement>
@@ -75,7 +74,7 @@
 
 	<properties>
 		<!-- Kurento versions -->
-		<version.kurento-java>6.6.2.0.INVENTIA-SNAPSHOT</version.kurento-java>
+		<version.kurento-java>6.6.2.0.INVENTIA</version.kurento-java>
 
 		<version.kurento-chroma>6.6.0</version.kurento-chroma>
 		<version.kurento-imageendpoint>6.6.0</version.kurento-imageendpoint>
