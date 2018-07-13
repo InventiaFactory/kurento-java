@@ -42,6 +42,13 @@
 		<tag>${project.version}</tag>
 	</scm>
 
+	<distributionManagement>
+		<repository>
+			<id>inventia</id>
+			<url>http://archiva.inventia.biz/repository/inventia</url>
+		</repository>
+	</distributionManagement>
+
 	<developers>
 		<developer>
 			<id>kurento.org</id>
