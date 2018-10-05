@@ -24,6 +24,7 @@ import static org.kurento.jsonrpc.internal.JsonRpcConstants.PONG_PAYLOAD;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.net.URI;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
@@ -361,4 +362,7 @@ public abstract class JsonRpcClient implements JsonRpcRequestSender, Closeable {
   public boolean isClosedByUser() {
     return this.closedByClient;
   }
+
+  public abstract URI getUri();
+
 }

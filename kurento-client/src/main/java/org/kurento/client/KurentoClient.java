@@ -17,6 +17,7 @@
 
 package org.kurento.client;
 
+import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
@@ -355,6 +356,10 @@ public class KurentoClient {
   public void setLabel(String label) {
     this.label = label;
     updateLabel(client, label);
+  }
+
+  public URI getUri() {
+    return this.client.getUri();
   }
 
   public String getLabel() {

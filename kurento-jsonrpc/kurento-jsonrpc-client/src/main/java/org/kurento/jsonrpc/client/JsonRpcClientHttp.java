@@ -22,6 +22,8 @@ import static org.kurento.jsonrpc.JsonUtils.toJson;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
@@ -44,12 +46,16 @@ public class JsonRpcClientHttp extends JsonRpcClient {
   private final Logger log = LoggerFactory.getLogger(JsonRpcClient.class);
 
   private Thread longPoolingThread;
-  private String url;
+  private URI uri;
 
   private HttpResponseSender rs;
 
   public JsonRpcClientHttp(String url) {
-    this.url = url;
+    try {
+      this.uri = new URI(url);
+    } catch (URISyntaxException e) {
+      throw new IllegalArgumentException("The URL received as argument is not a valid URL", e);
+    }
     this.rs = new HttpResponseSender();
     this.rsHelper = new JsonRpcRequestSenderHelper() {
       @Override
@@ -138,7 +144,7 @@ public class JsonRpcClientHttp extends JsonRpcClient {
   private <P, R> Response<R> internalSendRequestHttp(Request<P> request, Class<R> resultClass)
       throws IOException {
 
-    String resultJson = org.apache.http.client.fluent.Request.Post(url)
+    String resultJson = org.apache.http.client.fluent.Request.Post(uri)
         .bodyString(toJson(request), ContentType.APPLICATION_JSON).execute().returnContent()
         .asString();
 
@@ -174,7 +180,7 @@ public class JsonRpcClientHttp extends JsonRpcClient {
 
     try {
 
-      org.apache.http.client.fluent.Request.Post(url).bodyString("", ContentType.APPLICATION_JSON)
+      org.apache.http.client.fluent.Request.Post(uri).bodyString("", ContentType.APPLICATION_JSON)
       .execute();
 
     } catch (ClientProtocolException e) {
@@ -188,4 +194,8 @@ public class JsonRpcClientHttp extends JsonRpcClient {
     log.warn("setRequestTimeout(...) method will be ignored");
   }
 
+  @Override
+  public URI getUri() {
+    return this.uri;
+  }
 }
