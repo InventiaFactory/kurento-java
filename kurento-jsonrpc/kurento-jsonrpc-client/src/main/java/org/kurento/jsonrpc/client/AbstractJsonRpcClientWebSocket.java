@@ -883,6 +883,11 @@ public abstract class AbstractJsonRpcClientWebSocket extends JsonRpcClient {
     this.tryReconnectingMaxTime = tryReconnectingMaxTime;
   }
 
+  @Override
+  public URI getUri() {
+    return this.uri;
+  }
+
   protected abstract void sendTextMessage(String jsonMessage) throws IOException;
 
   protected abstract void closeNativeClient();

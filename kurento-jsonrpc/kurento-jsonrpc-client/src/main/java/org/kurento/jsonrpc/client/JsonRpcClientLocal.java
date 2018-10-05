@@ -18,6 +18,7 @@
 package org.kurento.jsonrpc.client;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -213,4 +214,8 @@ public class JsonRpcClientLocal extends JsonRpcClient {
     log.warn("setRequestTimeout(...) method will be ignored");
   }
 
+  @Override
+  public URI getUri() {
+    return null;
+  }
 }
