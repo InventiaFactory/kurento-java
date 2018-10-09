@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-repository</artifactId>
-		<version>6.6.2.2.INVENTIA-SNAPSHOT</version>
+		<version>6.6.2.2.INVENTIA</version>
 	</parent>
 
 	<artifactId>kurento-repository-client</artifactId>
@@ -34,7 +34,7 @@
 		<url>${kurento-java.scm.url}</url>
 		<connection>scm:git:${kurento-java.scm.connection}</connection>
 		<developerConnection>scm:git:${kurento-java.scm.connection}</developerConnection>
-		<tag>develop</tag>
+		<tag>v6.6.2.2.INVENTIA</tag>
 	</scm>
 
 	<developers>
