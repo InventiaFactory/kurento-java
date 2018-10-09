@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>kurento-parent-pom</artifactId>
-	<version>6.6.2.2.INVENTIA</version>
+	<version>6.6.2.3.INVENTIA-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Kurento Parent POM</name>
@@ -38,7 +38,7 @@
 		<url>${kurento-java.scm.url}</url>
 		<connection>scm:git:${kurento-java.scm.connection}</connection>
 		<developerConnection>scm:git:${kurento-java.scm.connection}</developerConnection>
-		<tag>v6.6.2.2.INVENTIA</tag>
+		<tag>${project.version}</tag>
 	</scm>
 
 	<distributionManagement>
@@ -74,7 +74,7 @@
 
 	<properties>
 		<!-- Kurento versions -->
-		<version.kurento-java>6.6.2.2.INVENTIA</version.kurento-java>
+		<version.kurento-java>6.6.2.3.INVENTIA-SNAPSHOT</version.kurento-java>
 
 		<version.kurento-chroma>6.6.0</version.kurento-chroma>
 		<version.kurento-imageendpoint>6.6.0</version.kurento-imageendpoint>
