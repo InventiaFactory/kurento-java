@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-parent-pom</artifactId>
-		<version>6.7.2-SNAPSHOT</version>
+		<version>6.7.1</version>
 		<relativePath>kurento-parent-pom</relativePath>
 	</parent>
 	<artifactId>kurento-java</artifactId>
@@ -23,6 +23,17 @@
 
 	<properties>
 		<main.basedir>${basedir}</main.basedir>
+
+		<!-- SONAR PROPERTIES -->
+		<sonar.language>java</sonar.language>
+		<surefireArgLine />
+		<skip.unit.tests>false</skip.unit.tests>
+
+		<!-- SONAR -->
+		<sonar-maven-plugin.version>3.6.1.1688</sonar-maven-plugin.version>
+		<maven-jacoco-plugin.version>0.8.4</maven-jacoco-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<sonar-jacoco-listener.version>5.14.0.18788</sonar-jacoco-listener.version>
 	</properties>
 
 	<profiles>
@@ -95,6 +106,92 @@
 				<module>kurento-integration-tests</module>
 			</modules>
 		</profile>
+
+		<profile>
+			<!-- JaCoCo unit and integration tests report upload to Sonar -->
+			<id>sonar-test-coverage</id>
+			<properties>
+				<sonar.host.url>https://sonarqube.factory.inventiacloud.com</sonar.host.url>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>${maven-jacoco-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>jacoco-pre-tests</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>jacoco-pre-integration-tests</id>
+								<phase>pre-integration-test</phase>
+								<goals>
+									<goal>prepare-agent-integration</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<!-- UNIT TESTS -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven-surefire-plugin.version}</version>
+						<configuration>
+							<skipTests>false</skipTests>
+							<testFailureIgnore>false</testFailureIgnore>
+							<properties>
+								<property>
+									<name>listener</name>
+									<value>org.sonar.java.jacoco.JUnitListener</value>
+								</property>
+							</properties>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>org.sonarsource.java</groupId>
+					<artifactId>sonar-jacoco-listeners</artifactId>
+					<version>${sonar-jacoco-listener.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+		</profile>
 	</profiles>
+
+	<!-- INVENTIA -->
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>${sonar-maven-plugin.version}</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>inventia-release</id>
+			<url>https://archiva.factory.inventiacloud.com/repository/inventia-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>inventia-snapshot</id>
+			<url>https://archiva.factory.inventiacloud.com/repository/inventia-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
