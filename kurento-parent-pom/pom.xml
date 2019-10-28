@@ -12,7 +12,7 @@
 	</parent>
 	<groupId>org.kurento</groupId>
 	<artifactId>kurento-parent-pom</artifactId>
-	<version>6.7.1</version>
+	<version>6.7.1.0.INVENTIA</version>
 	<packaging>pom</packaging>
 
 	<!-- Project-level information -->
@@ -77,9 +77,9 @@
 	<properties>
 		<!-- Kurento core components -->
 		<version.kurento-java>${project.version}</version.kurento-java>
-		<version.kms-api-core>${project.version}</version.kms-api-core>
-		<version.kms-api-elements>${project.version}</version.kms-api-elements>
-		<version.kms-api-filters>${project.version}</version.kms-api-filters>
+		<version.kms-api-core>6.7.1</version.kms-api-core>
+		<version.kms-api-elements>6.7.1</version.kms-api-elements>
+		<version.kms-api-filters>6.7.1</version.kms-api-filters>
 
 		<version.kurento-utils-js>6.7.0</version.kurento-utils-js>
 		<version.kurento-maven-plugin>6.7.0</version.kurento-maven-plugin>
@@ -194,7 +194,7 @@
 		<version.site.plugin>3.4</version.site.plugin>
 		<version.shell.plugin>1.0-beta-1</version.shell.plugin>
 		<version.shade.plugin>2.4.2</version.shade.plugin>
-		<version.sonar.plugin>2.7.1</version.sonar.plugin>
+		<version.sonar.plugin>3.6.1.1688</version.sonar.plugin>
 		<version.source.plugin>3.0.1</version.source.plugin>
 		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 		<version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>

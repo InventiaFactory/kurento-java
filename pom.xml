@@ -7,11 +7,12 @@
 	<parent>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-parent-pom</artifactId>
-		<version>6.7.1</version>
+		<version>6.7.1.0.INVENTIA</version>
 		<relativePath>kurento-parent-pom</relativePath>
 	</parent>
 	<artifactId>kurento-java</artifactId>
 	<packaging>pom</packaging>
+	<version>6.7.1.0.INVENTIA</version>
 
 	<!-- Project-level information -->
 	<name>Kurento Java</name>
@@ -30,7 +31,6 @@
 		<skip.unit.tests>false</skip.unit.tests>
 
 		<!-- SONAR -->
-		<sonar-maven-plugin.version>3.6.1.1688</sonar-maven-plugin.version>
 		<maven-jacoco-plugin.version>0.8.4</maven-jacoco-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 		<sonar-jacoco-listener.version>5.14.0.18788</sonar-jacoco-listener.version>
