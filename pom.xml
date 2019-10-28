@@ -183,15 +183,4 @@
 		</pluginManagement>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>inventia-release</id>
-			<url>https://archiva.factory.inventiacloud.com/repository/inventia-release</url>
-		</repository>
-		<snapshotRepository>
-			<id>inventia-snapshot</id>
-			<url>https://archiva.factory.inventiacloud.com/repository/inventia-snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 </project>
