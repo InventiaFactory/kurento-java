@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-parent-pom</artifactId>
-		<version>6.6.2.3.INVENTIA-SNAPSHOT</version>
+		<version>6.7.1.0.INVENTIA</version>
 		<relativePath>../kurento-parent-pom</relativePath>
 	</parent>
 
@@ -74,6 +74,18 @@
 		<dependency>
 			<groupId>org.kurento</groupId>
 			<artifactId>kms-api-filters</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

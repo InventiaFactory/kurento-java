@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-qa-pom</artifactId>
-		<version>1.0.3</version>
+		<version>6.7.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<artifactId>kurento-parent-pom</artifactId>
-	<version>6.6.2.3.INVENTIA-SNAPSHOT</version>
+	<version>6.7.1.0.INVENTIA</version>
 	<packaging>pom</packaging>
 
 	<name>Kurento Parent POM</name>
@@ -20,6 +20,17 @@
 		<system>Redmine</system>
 		<url>https://repository.kurento.org/redmine/</url>
 	</issueManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>inventia-release</id>
+			<url>https://archiva.factory.inventiacloud.com/repository/inventia-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>inventia-snapshot</id>
+			<url>https://archiva.factory.inventiacloud.com/repository/inventia-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<licenses>
 		<license>
@@ -40,13 +51,6 @@
 		<developerConnection>scm:git:${kurento-java.scm.connection}</developerConnection>
 		<tag>${project.version}</tag>
 	</scm>
-
-	<distributionManagement>
-		<repository>
-			<id>inventia</id>
-			<url>http://archiva.inventia.biz/repository/inventia</url>
-		</repository>
-	</distributionManagement>
 
 	<developers>
 		<developer>
@@ -74,7 +78,7 @@
 
 	<properties>
 		<!-- Kurento versions -->
-		<version.kurento-java>6.6.2.3.INVENTIA-SNAPSHOT</version.kurento-java>
+		<version.kurento-java>6.7.1.0.INVENTIA</version.kurento-java>
 
 		<version.kurento-chroma>6.6.0</version.kurento-chroma>
 		<version.kurento-imageendpoint>6.6.0</version.kurento-imageendpoint>
@@ -198,7 +202,7 @@
 		<version.site.plugin>3.4</version.site.plugin>
 		<version.shell.plugin>1.0-beta-1</version.shell.plugin>
 		<version.shade.plugin>2.4.2</version.shade.plugin>
-		<version.sonar.plugin>2.7.1</version.sonar.plugin>
+		<version.sonar.plugin>3.6.1.1688</version.sonar.plugin>
 		<version.source.plugin>3.0.1</version.source.plugin>
 		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 		<version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
